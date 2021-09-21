@@ -25,7 +25,7 @@ public class SPTV20Game {
         Random random = new Random();
         int gameNum = random.nextInt(max - min + 1) + min;
         System.out.println("Programm made up a number from 0 to 5, guess: ");
-        for(int i=0;i<3;i++){
+        for(int i = 0; i < 3; i++){
             Scanner scanner = new Scanner(System.in);
             int userNum = scanner.nextInt();
             if(gameNum == userNum) {
@@ -36,9 +36,14 @@ public class SPTV20Game {
                     System.out.println("Incorrect, Try again:");
                 }else{
                     System.out.println(":( You lost! The number is: " +gameNum);
+                    System.out.println("Enter 0 for exit, any other symbol to start a new round:");
+                    int exit = scanner.nextInt();
+                    if (exit > 0) {
+                        i=0;
                 }
             }
             attempt++;
+        }
         }
     } 
 }
